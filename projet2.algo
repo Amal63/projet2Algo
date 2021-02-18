@@ -1,0 +1,37 @@
+ALGORITHM Distinct
+VAR
+    somme,i,j:INTEGER;
+     set1:=[12, 13, 6, 10];
+     set2:=[13, 10, 16, 15];
+     l1:=length(set1);
+     l2:=length(set2);
+    
+    Résultat:BOOLEAN;
+BEGIN 
+      FOR j FROM 0 TO l2-1 STEP 1  DO
+            IF (set1[i]==set2[j]) THEN
+                Résultat=True;
+                break;
+                ELSE
+                Résultat=false;
+            END_IF
+            IF (Résultat=false) THEN
+                somme=somme+set1[i];
+            END_IF
+        END_FOR
+    END_FOR
+    FOR i FROM 0 TO l1-1 STEP 1  DO
+        FOR j FROM 0 TO l2-1 STEP 1  DO
+            IF (set2[i]==set1[j]) THEN
+                Résultat=True;
+                break;
+                ELSE
+                Résultat=false;
+            END_IF
+            IF (Résultat=false) THEN
+                somme:=somme+set2[i];
+            END_IF
+        END_FOR
+    END_FOR
+    write('the sum of distinc elements is',somme)
+END
